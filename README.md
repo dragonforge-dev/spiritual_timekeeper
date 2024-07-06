@@ -9,6 +9,7 @@ A timekeeping program for people keeping time in meetings of any kind.
 You can run this program right from your browser by going to [itch.io](https://tinyurl.com/rwx8yes2). This program has also been exported for Windows, Mac, Linux, the Web, and Android. Due to the fact that I lack deveopment certificates for export, all of these exports may require you to trust the developer to use. Additionally, iOS export was not available. You can find the executables on the same page as the web version: [itch.io](https://tinyurl.com/rwx8yes2).
 
 ## QR Code for Download & Web Use ##
+![rwx8yes2-160](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/9a373ce8-b464-4430-9d34-8edd080072b7)
 
 ## Usage ##
 1. Use the arrows to select the total share time. (Default is 2 minutes and 30 seconds.)
@@ -19,3 +20,7 @@ You can run this program right from your browser by going to [itch.io](https://t
 6. To restart the time, press the **Restart** button again at any time.
 
 ## Screenshots ##
+![Spiritual Timekeeper Start Screen](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/f53081e0-4460-41e6-bae9-2ef83c2ed3bb)
+![Spiritual Timekeeper Warning Screen](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/00a0636c-0372-4e0e-8992-4eb3e910262f)
+![Spiritual Timekeeper End Screen](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/2231bc7a-662c-4b13-a6f4-34bf2f3309f8)
+![Spiritual Timekeeper Info Screen](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/14161c89-7237-4550-96a6-0b9742d2d21f)
