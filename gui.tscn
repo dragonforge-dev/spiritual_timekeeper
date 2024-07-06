@@ -1,0 +1,222 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl00s1kbsjolb"]
+
+[ext_resource type="Script" path="res://gui.gd" id="1_nmw66"]
+[ext_resource type="Texture2D" uid="uid://ch5g3eqc1ehne" path="res://art/up_down_arrows_40_x_50.png" id="2_iovru"]
+[ext_resource type="Texture2D" uid="uid://b5paunwqp7tic" path="res://art/about-48.png" id="2_iwdkw"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_dyl4c"]
+action = &"start_timer"
+
+[sub_resource type="Shortcut" id="Shortcut_23gic"]
+events = [SubResource("InputEventAction_dyl4c")]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_nmw66")
+
+[node name="CountdownDisplay" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 128
+text = "0 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShareTimeContainer" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -160.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ShareTimeLabel" type="Label" parent="ShareTimeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Share Time:"
+vertical_alignment = 1
+
+[node name="ShareTimeMin" type="SpinBox" parent="ShareTimeContainer"]
+layout_mode = 2
+theme_override_icons/updown = ExtResource("2_iovru")
+value = 2.0
+update_on_text_changed = true
+suffix = "min"
+
+[node name="ShareTimeSec" type="SpinBox" parent="ShareTimeContainer"]
+layout_mode = 2
+theme_override_icons/updown = ExtResource("2_iovru")
+min_value = -15.0
+max_value = 60.0
+value = 30.0
+update_on_text_changed = true
+suffix = "sec"
+custom_arrow_step = 15.0
+
+[node name="WarningTimeContainer" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -85.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="WarningTimeLabel" type="Label" parent="WarningTimeContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Warning Time:"
+
+[node name="WarningTimeMin" type="SpinBox" parent="WarningTimeContainer"]
+layout_mode = 2
+theme_override_icons/updown = ExtResource("2_iovru")
+value = 1.0
+update_on_text_changed = true
+suffix = "min"
+
+[node name="WarningTimeSec" type="SpinBox" parent="WarningTimeContainer"]
+layout_mode = 2
+theme_override_icons/updown = ExtResource("2_iovru")
+min_value = -15.0
+max_value = 60.0
+update_on_text_changed = true
+suffix = "sec"
+custom_arrow_step = 15.0
+
+[node name="LabelContainer" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="WarningLabel" type="Label" parent="LabelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 64
+text = "Warning"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="LabelContainer"]
+custom_minimum_size = Vector2(480, 74)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.788235, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 54
+text = "Say: \"20 Minutes 45 Seconds\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -140.0
+offset_right = 120.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+tooltip_text = "Press [ENTER] or [SPACEBAR]"
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_23gic")
+shortcut_in_tooltip = false
+text = "Start"
+
+[node name="WarningTimer" type="Timer" parent="."]
+
+[node name="ShareOverTimer" type="Timer" parent="."]
+
+[node name="InfoButton" type="Button" parent="."]
+custom_minimum_size = Vector2(48, 48)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_bottom = 56.0
+grow_horizontal = 0
+icon = ExtResource("2_iwdkw")
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(354, 627)
+borderless = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 350.0
+offset_bottom = 623.0
+
+[node name="Instructions" type="RichTextLabel" parent="PopupPanel/VBoxContainer"]
+custom_minimum_size = Vector2(346, 500)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 19
+bbcode_enabled = true
+text = "1. Use the arrows to select the total share time. (Default is 2 minutes and 30 seconds.)
+2. Use the arrows to select the time at which the speaker should receive a warning that their time is almost up. (Default is 1 minute.)
+3. Press the [color=DEEPSKYBLUE][b]Start[/b][/color] button to start the timer. (NOTE: The [color=DEEPSKYBLUE][b]Enter[/b][/color] Key and [color=DEEPSKYBLUE][b]Spacebar[/b][/color] can also be used to start the timer on a computer.)
+4. At the warning time selected, a [color=YELLOW][b]yellow[/b][/color] warning message will appear along with a prompt telling you what to say to warn the speaker.
+5. When the time is elapsed, a [color=RED][b]red[/b][/color] \"Time's Up!\" message will appear, telling you to what to say.
+6. To restart the time, press the [color=DEEPSKYBLUE][b]Restart[/b][/color] button again at any time."
+
+[node name="LicenseButton" type="Button" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+text = "License"
+
+[node name="IconInfo" type="RichTextLabel" parent="PopupPanel/VBoxContainer"]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "App Icon: [url=\"https://iconscout.com/3d-illustrations/time-machine\"]Time Machine[/url] by [url=\"https://iconscout.com/contributors/mahendra\"]Eklip Studio[/url] on [url=\"https://iconscout.com\"]IconScout[/url]"
+
+[node name="License" type="PopupPanel" parent="PopupPanel"]
+initial_position = 1
+size = Vector2i(320, 500)
+borderless = false
+always_on_top = true
+min_size = Vector2i(320, 500)
+
+[node name="LicenseText" type="RichTextLabel" parent="PopupPanel/License"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 316.0
+offset_bottom = 496.0
+text = "MIT License
+
+Copyright (c) 2024 Dragonforge Development
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+
+[connection signal="value_changed" from="ShareTimeContainer/ShareTimeSec" to="." method="_on_share_time_sec_value_changed"]
+[connection signal="value_changed" from="WarningTimeContainer/WarningTimeSec" to="." method="_on_warning_time_sec_value_changed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]
+[connection signal="timeout" from="ShareOverTimer" to="." method="_on_share_over_timer_timeout"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/LicenseButton" to="." method="_on_license_button_pressed"]
+[connection signal="meta_clicked" from="PopupPanel/VBoxContainer/IconInfo" to="." method="_on_rich_text_label_meta_clicked"]
