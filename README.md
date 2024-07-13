@@ -1,4 +1,4 @@
-![GitHub Release](https://img.shields.io/github/v/release/dragonforge-dev/spiritual_timekeeper?style=plastic) ![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.2-blue?style=plastic&logo=godotengine) ![GitHub top language](https://img.shields.io/github/languages/top/dragonforge-dev/spiritual_timekeeper?style=plastic)
+![GitHub Release](https://img.shields.io/github/v/release/dragonforge-dev/spiritual_timekeeper?style=plastic) [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.2-blue?style=plastic&logo=godotengine)](https://godotengine.org/) ![GitHub top language](https://img.shields.io/github/languages/top/dragonforge-dev/spiritual_timekeeper?style=plastic)
 
 [![Static Badge](https://img.shields.io/badge/itch.io-Run%20In%20Browser%20%2F%20Download-%23FA5C5C?style=plastic&logo=itchdotio)](https://tinyurl.com/rwx8yes2)
 
