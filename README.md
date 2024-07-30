@@ -24,3 +24,6 @@ You can run this program right from your browser by going to [itch.io](https://t
 ![Spiritual Timekeeper Warning Screen](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/00a0636c-0372-4e0e-8992-4eb3e910262f)
 ![Spiritual Timekeeper End Screen](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/2231bc7a-662c-4b13-a6f4-34bf2f3309f8)
 ![Spiritual Timekeeper Info Screen](https://github.com/dragonforge-dev/spiritual_timekeeper/assets/172682465/14161c89-7237-4550-96a6-0b9742d2d21f)
+
+## Versioning ##
+This project uses [Semantic Versioning 2.0.0](https://semver.org/).
