@@ -123,23 +123,31 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButtonContainer" type="VBoxContainer" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -120.0
-offset_top = -140.0
-offset_right = 120.0
-offset_bottom = -44.0
+offset_left = -79.0
+offset_top = -123.0
+offset_right = 79.0
 grow_horizontal = 2
 grow_vertical = 0
-tooltip_text = "Press [ENTER] or [SPACEBAR]"
+
+[node name="StartButton" type="Button" parent="StartButtonContainer"]
+custom_minimum_size = Vector2(240, 96)
+layout_mode = 2
 theme_override_font_sizes/font_size = 64
 shortcut = SubResource("Shortcut_23gic")
 shortcut_in_tooltip = false
 text = "Start"
+
+[node name="TooltipLabel" type="Label" parent="StartButtonContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press [ENTER] or [SPACEBAR]"
 
 [node name="WarningTimer" type="Timer" parent="."]
 
@@ -214,7 +222,9 @@ THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMP
 
 [connection signal="value_changed" from="ShareTimeContainer/ShareTimeSec" to="." method="_on_share_time_sec_value_changed"]
 [connection signal="value_changed" from="WarningTimeContainer/WarningTimeSec" to="." method="_on_warning_time_sec_value_changed"]
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="StartButtonContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="StartButtonContainer/StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="StartButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]
 [connection signal="timeout" from="ShareOverTimer" to="." method="_on_share_over_timer_timeout"]
 [connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]

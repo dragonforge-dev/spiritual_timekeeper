@@ -7,7 +7,7 @@ var _spinner_node: SpinBox = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$StartButton.text = "Start"
+	$StartButtonContainer/StartButton.text = "Start"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -81,8 +81,8 @@ func _get_warning_time_start():
 
 
 func _on_start_button_pressed():
-	if $StartButton.text == "Start":
-		$StartButton.text = "Restart"
+	if $StartButtonContainer/StartButton.text == "Start":
+		$StartButtonContainer/StartButton.text = "Restart"
 	start_timer()
 
 
@@ -144,3 +144,11 @@ func _on_license_button_pressed():
 func _on_second_lock_toggled(toggled_on):
 	if toggled_on:
 		$ShareTimeContainer/ShareTimeSec.step = 1
+
+
+func _on_start_button_mouse_entered() -> void:
+	$StartButtonContainer/TooltipLabel.visible = true
+
+
+func _on_start_button_mouse_exited() -> void:
+	$StartButtonContainer/TooltipLabel.visible = false
