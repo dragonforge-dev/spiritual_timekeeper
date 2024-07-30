@@ -8,6 +8,7 @@ var _spinner_node: SpinBox = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$StartButtonContainer/StartButton.text = "Start"
+	$VersionLabel.text = "v%s" % ProjectSettings.get_setting("application/config/version")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -220,6 +220,18 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
 
+[node name="VersionLabel" type="Label" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+
 [connection signal="value_changed" from="ShareTimeContainer/ShareTimeSec" to="." method="_on_share_time_sec_value_changed"]
 [connection signal="value_changed" from="WarningTimeContainer/WarningTimeSec" to="." method="_on_warning_time_sec_value_changed"]
 [connection signal="mouse_entered" from="StartButtonContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
