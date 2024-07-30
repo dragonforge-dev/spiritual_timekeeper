@@ -3,7 +3,9 @@
 [![Static Badge](https://img.shields.io/badge/itch.io-Run%20In%20Browser%20%2F%20Download-%23FA5C5C?style=plastic&logo=itchdotio)](https://tinyurl.com/rwx8yes2)
 
 # Spiritual Timekeeper #
-A timekeeping program for people keeping time in meetings of any kind.
+A timekeeping program for people keeping time in meetings of any kind. This program will always be offered free of charge, but if you want to support it and other tools created for free, you can buy me a coffee:
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dragonforge.dev)
 
 ## Download Or Use On Web ##
 You can run this program right from your browser by going to [itch.io](https://tinyurl.com/rwx8yes2). This program has also been exported for Windows, Mac, Linux, the Web, and Android. Due to the fact that I lack deveopment certificates for export, all of these exports may require you to trust the developer to use. Additionally, iOS export was not available. You can find the executables on the same page as the web version: [itch.io](https://tinyurl.com/rwx8yes2).
