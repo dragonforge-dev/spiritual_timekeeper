@@ -15,9 +15,10 @@ extends CanvasLayer
 @onready var info_window: PopupPanel = $PopupPanel
 @onready var license_info_window: PopupPanel = $PopupPanel/License
 
-
 @onready var timer_share_over: Timer = $ShareOverTimer
 @onready var timer_warning: Timer = $WarningTimer
+
+var version_file_path = "res://version.res"
 
 var _running: bool = false
 var _change_share_minute: int = false
@@ -184,13 +185,21 @@ func _on_start_timer_signal_sent() -> void:
 
 
 func get_version() -> String:
-	var project_version = ProjectSettings.get_setting("application/config/version")
-	var version_file_path = "res://version.txt"
-	var saved_version = FileAccess.open(version_file_path, FileAccess.READ).get_as_text()
+	var project_version = ""
+	# Load version from resource if it exists
+	if FileAccess.file_exists(version_file_path):
+		var file = FileAccess.open(version_file_path, FileAccess.READ)
+		project_version = file.get_var()
 	
-	if project_version == "":
-		project_version = "v%s" % saved_version
-	elif project_version != saved_version:
-		FileAccess.open(version_file_path, FileAccess.WRITE).store_string(project_version)
+	# If we are running in the editor, this should update the latest version.
+	var project_settings_version = ProjectSettings.get_setting("application/config/version")
+	print_rich("Project Settings Version: %s" % [project_settings_version])
+	print_rich("Saved Project Version: %s" % [project_version])
 	
-	return project_version
+	# If we are in the editor and the project version is newer, update the resource
+	if project_version != project_settings_version and project_settings_version != "":
+		project_version = project_settings_version
+		var file = FileAccess.open(version_file_path, FileAccess.WRITE)
+		file.store_var(project_version)
+	
+	return "v%s" % project_version

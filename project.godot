@@ -15,7 +15,7 @@ AutoExportVersion/version_store_location=0
 [application]
 
 config/name="Spiritual Timekeeper"
-config/version="1.0.3.0"
+config/version="1.1.2.0"
 run/main_scene="res://gui.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://art/icons/icon_256_x_256.png"
