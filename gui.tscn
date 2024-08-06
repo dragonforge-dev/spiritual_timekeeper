@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl00s1kbsjolb"]
+[gd_scene load_steps=7 format=3 uid="uid://bl00s1kbsjolb"]
 
 [ext_resource type="Script" path="res://gui.gd" id="1_nmw66"]
 [ext_resource type="Texture2D" uid="uid://ch5g3eqc1ehne" path="res://art/up_down_arrows_40_x_50.png" id="2_iovru"]
 [ext_resource type="Texture2D" uid="uid://b5paunwqp7tic" path="res://art/about-48.png" id="2_iwdkw"]
+[ext_resource type="Script" path="res://spin_box.gd" id="3_vqydm"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_dyl4c"]
 action = &"start_timer"
@@ -46,6 +47,7 @@ theme_override_icons/updown = ExtResource("2_iovru")
 value = 2.0
 update_on_text_changed = true
 suffix = "min"
+script = ExtResource("3_vqydm")
 
 [node name="ShareTimeSec" type="SpinBox" parent="ShareTimeContainer"]
 layout_mode = 2
@@ -56,6 +58,7 @@ value = 30.0
 update_on_text_changed = true
 suffix = "sec"
 custom_arrow_step = 15.0
+script = ExtResource("3_vqydm")
 
 [node name="WarningTimeContainer" type="HBoxContainer" parent="."]
 anchors_preset = 14
@@ -79,6 +82,7 @@ theme_override_icons/updown = ExtResource("2_iovru")
 value = 1.0
 update_on_text_changed = true
 suffix = "min"
+script = ExtResource("3_vqydm")
 
 [node name="WarningTimeSec" type="SpinBox" parent="WarningTimeContainer"]
 layout_mode = 2
@@ -88,6 +92,7 @@ max_value = 60.0
 update_on_text_changed = true
 suffix = "sec"
 custom_arrow_step = 15.0
+script = ExtResource("3_vqydm")
 
 [node name="LabelContainer" type="VBoxContainer" parent="."]
 visible = false

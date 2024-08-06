@@ -28,6 +28,10 @@ var _spinner_node: SpinBox = null
 func _ready() -> void:
 	start_button.text = "Start"
 	version_label.text = get_version()
+	share_time_minutes.start_timer.connect(_on_start_timer_signal_sent)
+	share_time_seconds.start_timer.connect(_on_start_timer_signal_sent)
+	warning_time_minutes.start_timer.connect(_on_start_timer_signal_sent)
+	warning_time_seconds.start_timer.connect(_on_start_timer_signal_sent)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,6 +43,11 @@ func _process(_delta) -> void:
 		_spinner_node.value += _change_share_minute
 		_change_share_minute = false
 		_spinner_node = null
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("start_timer"):
+		start_timer()
 
 
 func start_timer() -> void:
@@ -167,6 +176,11 @@ func _on_start_button_mouse_entered() -> void:
 
 func _on_start_button_mouse_exited() -> void:
 	start_button_tooltip.visible = false
+
+
+func _on_start_timer_signal_sent() -> void:
+	start_button.grab_focus()
+	start_timer()
 
 
 func get_version() -> String:
