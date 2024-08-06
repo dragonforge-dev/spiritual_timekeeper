@@ -5,7 +5,7 @@
 # Spiritual Timekeeper #
 A timekeeping program for people keeping time in meetings of any kind. This program will always be offered free of charge, but if you want to support it and other tools created for free, you can buy me a coffee:
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dragonforge.dev)
+[![buy-me-a-coffee-blue-height-60](https://github.com/user-attachments/assets/2e8782d9-c5bd-4071-b043-11213896c15d)](https://www.buymeacoffee.com/dragonforge.dev)
 
 ## Download Or Use On Web ##
 You can run this program right from your browser by going to [itch.io](https://tinyurl.com/rwx8yes2). This program has also been exported for Windows, Mac, Linux, the Web, and Android. Due to the fact that I lack deveopment certificates for export, all of these exports may require you to trust the developer to use. Additionally, iOS export was not available. You can find the executables on the same page as the web version: [itch.io](https://tinyurl.com/rwx8yes2).
